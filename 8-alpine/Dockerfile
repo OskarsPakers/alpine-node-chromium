@@ -5,9 +5,9 @@ MAINTAINER Aleksandar Diklic "https://github.com/rastasheep"
 RUN \
   apk --no-cache  update \
   && apk --no-cache  upgrade \
-  && echo "http://dl-2.alpinelinux.org/alpine/edge/main" > /etc/apk/repositories
-  && echo "http://dl-2.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories
-  && echo "http://dl-2.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
+  && echo "http://dl-2.alpinelinux.org/alpine/edge/main" > /etc/apk/repositories \
+  && echo "http://dl-2.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories \
+  && echo "http://dl-2.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories \
   && apk -U --no-cache \
       --allow-untrusted add \
       zlib-dev \
