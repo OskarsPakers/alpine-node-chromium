@@ -75,7 +75,8 @@ jobs:
         with:
           context: ./18-alpine/
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ steps.meta.outputs.tags }}
+          tags: |
+            ghcr.io/oskarspakers/alpine-node-chromium:18-alpine
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max        
@@ -88,7 +89,9 @@ jobs:
         with:
           context: ./20-alpine/
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ steps.meta.outputs.tags }}
+          tags: |
+            ghcr.io/oskarspakers/alpine-node-chromium:20-alpine
+            ghcr.io/oskarspakers/alpine-node-chromium:latest            
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
